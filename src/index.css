@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html { scroll-behavior: smooth; }
+  body { @apply bg-sand-50 text-sand-900 font-sans antialiased; }
+  .dark body { @apply bg-sand-950 text-sand-100; }
+  h1, h2, h3, h4, h5, h6 { @apply font-serif font-semibold tracking-tight; }
+}
+
+@layer components {
+  .btn { @apply inline-flex items-center justify-center px-4 py-2 rounded-lg font-medium transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed; }
+  .btn-primary { @apply btn bg-primary-500 text-white hover:bg-primary-600 focus:ring-primary-500; }
+  .btn-secondary { @apply btn bg-secondary-500 text-white hover:bg-secondary-600 focus:ring-secondary-500; }
+  .btn-outline { @apply btn border-2 border-primary-500 text-primary-600 hover:bg-primary-50 focus:ring-primary-500; }
+  .dark .btn-outline { @apply hover:bg-primary-950 text-primary-400; }
+  .btn-ghost { @apply btn text-sand-600 hover:bg-sand-100; }
+  .dark .btn-ghost { @apply text-sand-300 hover:bg-sand-800; }
+  .card { @apply bg-white rounded-2xl shadow-lg overflow-hidden transition-all duration-300; }
+  .dark .card { @apply bg-sand-900; }
+  .card-hover:hover { @apply shadow-xl -translate-y-1; }
+  .input { @apply w-full px-4 py-3 rounded-lg border border-sand-200 bg-white text-sand-900 placeholder-sand-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent transition-colors; }
+  .dark .input { @apply border-sand-700 bg-sand-800 text-sand-100 placeholder-sand-500; }
+  .label { @apply block text-sm font-medium text-sand-700 mb-1; }
+  .dark .label { @apply text-sand-300; }
+  .container { @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8; }
+  .section-title { @apply text-3xl md:text-4xl font-serif font-semibold text-sand-900 mb-4; }
+  .dark .section-title { @apply text-sand-50; }
+  .section-subtitle { @apply text-lg text-sand-600 max-w-2xl; }
+  .dark .section-subtitle { @apply text-sand-400; }
+}
+
+@layer utilities {
+  .text-gradient { @apply bg-gradient-to-r from-primary-500 to-secondary-500 bg-clip-text text-transparent; }
+  .bg-gradient-hero { background: linear-gradient(135deg, #e87342 0%, #14b8a6 100%); }
+}
+
+.spinner { width: 1.5rem; height: 1.5rem; border: 3px solid currentColor; border-radius: 50%; animation: spin 0.6s linear infinite; border-top-color: transparent; }
+@keyframes spin { to { transform: rotate(360deg); } }
